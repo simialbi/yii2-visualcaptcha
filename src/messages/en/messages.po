@@ -1,0 +1,29 @@
+#: widgets/VisualCaptcha.php
+msgctxt "simialbi/visualcaptcha/input-widget"
+msgid "Sound icon"
+msgstr "Sound icon"
+
+#: widgets/VisualCaptcha.php
+msgctxt "simialbi/visualcaptcha/input-widget"
+msgid "Accessibility option: listen to a question and answer it!"
+msgstr "Accessibility option: listen to a question and answer it!"
+
+#: widgets/VisualCaptcha.php
+msgctxt "simialbi/visualcaptcha/input-widget"
+msgid "Type below the <strong>answer</strong> to what you hear. Numbers or words:"
+msgstr "Type below the <strong>answer</strong> to what you hear. Numbers or words:"
+
+#: widgets/VisualCaptcha.php
+msgctxt "simialbi/visualcaptcha/input-widget"
+msgid "Click or touch the <strong>ANSWER</strong>"
+msgstr "Click or touch the <strong>ANSWER</strong>"
+
+#: widgets/VisualCaptcha.php
+msgctxt "simialbi/visualcaptcha/input-widget"
+msgid "Refresh/reload icon"
+msgstr "Refresh/reload icon"
+
+#: widgets/VisualCaptcha.php
+msgctxt "simialbi/visualcaptcha/input-widget"
+msgid "Refresh/reload: get new images and accessibility option!"
+msgstr "Refresh/reload: get new images and accessibility option!"
