@@ -396,7 +396,7 @@ class Captcha extends Component
      * Set the current validImageOption
      * @param array $validImageOption
      */
-    public function setValidImageOptions($validImageOption)
+    public function setValidImageOption($validImageOption)
     {
         Yii::$app->session->set($this->sessionPrefix . 'validImageOption', $validImageOption);
     }

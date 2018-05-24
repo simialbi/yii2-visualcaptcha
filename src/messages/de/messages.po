@@ -16,7 +16,7 @@ msgstr "Gib die <strong>Antwort</strong> auf die gehörte Frage unten ein. Zahle
 #: widgets/VisualCaptcha.php
 msgctxt "simialbi/visualcaptcha/input-widget"
 msgid "Click or touch the <strong>ANSWER</strong>"
-msgstr "Klicke auf oder berühre die <strong>Antwort</strong>"
+msgstr "Klicke auf oder berühre: <strong>ANSWER</strong>" # Do not translate the word ANSWER. It will be replaced clientside
 
 #: widgets/VisualCaptcha.php
 msgctxt "simialbi/visualcaptcha/input-widget"

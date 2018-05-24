@@ -26,6 +26,15 @@ class VisualCaptcha extends InputWidget
     public $numberOfImages = 6;
 
     /**
+     * @var string path to the following interface icons:
+     *   * accessibility.png
+     *   * accessibility@2x.png
+     *   * refresh.png
+     *   * refresh@2x.png
+     */
+    public $imgPath = '@web/img/';
+
+    /**
      * {@inheritdoc}
      */
     public function init()
@@ -60,9 +69,9 @@ class VisualCaptcha extends InputWidget
                 'Refresh/reload: get new images and accessibility option!'
             )
         ];
-        $this->clientOptions['imgPath'] = Yii::getAlias('@visualcaptcha/assets/img/');
+        $this->clientOptions['imgPath'] = rtrim(Yii::getAlias($this->imgPath), '/') . '/';
         $this->clientOptions['captcha'] = [
-            'url' => Url::to([$this->moduleId]),
+            'url' => Url::to(['/' . $this->moduleId]),
             'numberOfImages' => $this->numberOfImages,
             'routes' => [
                 'start' => '/start',
