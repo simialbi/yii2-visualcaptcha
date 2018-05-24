@@ -15,6 +15,7 @@ use yii\helpers\ArrayHelper;
  * Class Captcha
  * @package simialbi\yii2\visualcaptcha\components
  *
+ * @property string $namespace the value of the parameter sent to the server for the namespace, if it's not set up, no namespace will be sent
  * @property array $frontendData
  * @property array $validImageOption
  * @property array $validAudioOption
@@ -268,6 +269,12 @@ class Captcha extends Component
     public $sessionPrefix = 'visualcaptcha_';
 
     /**
+     * @var string the value of the parameter sent to the server for the namespace, if it's not set up,
+     * no namespace will be sent
+     */
+    private $_namespace;
+
+    /**
      * Generate a new valid option
      * @param integer $numberOfOptions Number of options. This parameter is optional. Defaults to 5.
      */
@@ -318,9 +325,10 @@ class Captcha extends Component
 
         $this->frontendData = [
             'values' => $imageValues,
-            'imageName' => Yii::t('simialbi/visualcaptcha/names', ArrayHelper::getValue($this->validImageOption, 'name')),
-            'imageFieldName' => $this->utilRandomHex(10),
-            'audioFieldName' => $this->utilRandomHex(10)
+            'imageName' => Yii::t('simialbi/visualcaptcha/names',
+                ArrayHelper::getValue($this->validImageOption, 'name')),
+            'imageFieldName' => $this->namespace ? $this->namespace . '[' . $this->utilRandomHex(10) . ']' : $this->utilRandomHex(10),
+            'audioFieldName' => $this->namespace ? $this->namespace . '[' . $this->utilRandomHex(10) . ']' : $this->utilRandomHex(10)
         ];
     }
 
@@ -381,6 +389,30 @@ class Captcha extends Component
     public function setFrontendData($frontendData)
     {
         Yii::$app->session->set($this->sessionPrefix . 'frontendData', $frontendData);
+    }
+
+    /**
+     * @return string
+     */
+    public function getNamespace()
+    {
+        return $this->_namespace;
+    }
+
+    /**
+     *
+     * @param string $namespace
+     */
+    public function setNamespace($namespace)
+    {
+        $this->_namespace = $namespace;
+
+        if ($pos = (strpos($this->sessionPrefix, '/') !== false)) {
+            $this->sessionPrefix = substr($this->sessionPrefix, $pos + 1);
+        }
+        if (!empty($namespace)) {
+            $this->sessionPrefix = $namespace . '/' . $this->sessionPrefix;
+        }
     }
 
     /**

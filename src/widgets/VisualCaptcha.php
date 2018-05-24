@@ -73,6 +73,10 @@ class VisualCaptcha extends InputWidget
         $this->clientOptions['captcha'] = [
             'url' => Url::to(['/' . $this->moduleId]),
             'numberOfImages' => $this->numberOfImages,
+            'namespace' => $this->hasModel()
+                ? Html::getInputName($this->model, $this->attribute)
+                : $this->name,
+            'namespaceFieldName' => 'namespace',
             'routes' => [
                 'start' => '/start',
                 'image' => '/image',

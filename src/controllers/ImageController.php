@@ -22,14 +22,18 @@ class ImageController extends Controller
 {
     /**
      * @param integer $index
-     * @param boolean $isRetina
+     * @param boolean $retina
+     * @param string|null $namespace string the value of the parameter sent to the server for the namespace,
+     * if it's not set up, no namespace will be sent
      * @return \yii\web\Response
+     *
      * @throws NotFoundHttpException
      * @throws \yii\web\RangeNotSatisfiableHttpException
      */
-    public function actionIndex($index, $isRetina = false)
+    public function actionIndex($index, $retina = false, $namespace = null)
     {
         $captcha = $this->module->captcha;
+        $captcha->namespace = $namespace;
         $imageOption = ArrayHelper::getValue($captcha->sessionImageOptions, $index);
 
         if (!$imageOption) {
@@ -39,7 +43,7 @@ class ImageController extends Controller
         $imageFileName = ArrayHelper::getValue($imageOption, 'path', '');
         $imageFilePath = Yii::getAlias('@visualcaptcha/assets/images/' . $imageFileName);
 
-        if ($isRetina) {
+        if ($retina) {
             $imageFileName = substr_replace($imageFileName, '@2x.png', -4);
             $imageFilePath = substr_replace($imageFilePath, '@2x.png', -4);
         }

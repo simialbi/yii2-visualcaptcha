@@ -18,6 +18,9 @@ use yii\web\Response;
  */
 class CaptchaController extends Controller
 {
+    /**
+     * {@inheritdoc}
+     */
     public function behaviors()
     {
         return [
@@ -31,12 +34,15 @@ class CaptchaController extends Controller
     }
 
     /**
-     * @param integer $howMany
+     * @param integer $howMany Number of options. This parameter is optional. Defaults to 5.
+     * @param string|null $namespace string the value of the parameter sent to the server for the namespace,
+     * if it's not set up, no namespace will be sent
      * @return array
      */
-    public function actionIndex($howMany = 5)
+    public function actionIndex($howMany = 5, $namespace = null)
     {
         $captcha = $this->module->captcha;
+        $captcha->namespace = $namespace;
         $captcha->generate($howMany);
 
         return $captcha->frontendData;

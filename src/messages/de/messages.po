@@ -6,27 +6,27 @@ msgstr "Sound"
 #: widgets/VisualCaptcha.php
 msgctxt "simialbi/visualcaptcha/input-widget"
 msgid "Accessibility option: listen to a question and answer it!"
-msgstr "Lösungsweg: Höre eine Frage und beantworte sie!"
+msgstr "Alternative: Höre eine Frage und beantworte sie!"
 
 #: widgets/VisualCaptcha.php
 msgctxt "simialbi/visualcaptcha/input-widget"
 msgid "Type below the <strong>answer</strong> to what you hear. Numbers or words:"
-msgstr "Gib die <strong>Antwort</strong> auf die gehörte Frage unten ein. Zahlen oder Worte:"
+msgstr "Gib die <strong>Antwort</strong> auf die gehörte Frage unten ein:"
 
 #: widgets/VisualCaptcha.php
 msgctxt "simialbi/visualcaptcha/input-widget"
 msgid "Click or touch the <strong>ANSWER</strong>"
-msgstr "Klicke auf oder berühre: <strong>ANSWER</strong>" # Do not translate the word ANSWER. It will be replaced clientside
+msgstr "Wähle <strong>ANSWER</strong> aus" # Do not translate the word ANSWER. It will be replaced clientside
 
 #: widgets/VisualCaptcha.php
 msgctxt "simialbi/visualcaptcha/input-widget"
 msgid "Refresh/reload icon"
-msgstr "Neu laden"
+msgstr "Aktualisieren"
 
 #: widgets/VisualCaptcha.php
 msgctxt "simialbi/visualcaptcha/input-widget"
 msgid "Refresh/reload: get new images and accessibility option!"
-msgstr "Neu laden: Neue Bilder laden!"
+msgstr "Aktualisieren"
 
 
 #: components/Captcha.php

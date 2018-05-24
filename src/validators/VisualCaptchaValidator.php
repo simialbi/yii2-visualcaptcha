@@ -7,6 +7,9 @@
 namespace simialbi\yii2\visualcaptcha\validators;
 
 use Yii;
+use yii\helpers\ArrayHelper;
+use yii\helpers\Html;
+use yii\validators\ValidationAsset;
 use yii\validators\Validator;
 
 /**
@@ -43,15 +46,46 @@ class VisualCaptchaValidator extends Validator
      */
     public function clientValidateAttribute($model, $attribute, $view)
     {
-        return 'jQuery(\'#\' + attribute.id).data(\'captcha\').getCaptchaData().valid;';
+        ValidationAsset::register($view);
+
+        $js = <<<JS
+if (!jQuery(attribute.input).data('captcha').getCaptchaData().valid) {
+	yii.validation.addMessage(messages, '{$this->message}', value);
+}
+JS;
+
+        return $js;
     }
 
     /**
      * {@inheritdoc}
+     * @throws \yii\base\NotSupportedException
+     * @throws \yii\base\InvalidConfigException
      */
-    protected function validateValue($value)
+    public function validateAttribute($model, $attribute)
     {
-        return ($this->captcha->validateImage($value) || $this->captcha->validateAudio($value));
+        $result = $this->validateValue($model->$attribute, Html::getInputName($model, $attribute));
+        if (!empty($result)) {
+            $this->addError($model, $attribute, $result[0], $result[1]);
+        }
+    }
+
+    /**
+     * {@inheritdoc}
+     * @param string|null $namespace string the value of the parameter sent to the server for the namespace,
+     * if it's not set up, no namespace will be sent
+     */
+    protected function validateValue($value, $namespace = null)
+    {
+        $this->captcha->namespace = $namespace;
+        $imageFieldName = ArrayHelper::getValue($this->captcha->frontendData, 'imageFieldName');
+        $audioFieldName = ArrayHelper::getValue($this->captcha->frontendData, 'audioFieldName');
+        if ($imageFieldName && $value = Yii::$app->request->getBodyParam($imageFieldName)) {
+            return $this->captcha->validateImage($value) ? null : [$this->message, []];
+        } elseif ($audioFieldName && $value = Yii::$app->request->getBodyParam($imageFieldName)) {
+            return $this->captcha->validateAudio($value) ? null : [$this->message, []];
+        }
+        return false;
     }
 
     /**

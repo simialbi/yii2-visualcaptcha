@@ -21,12 +21,15 @@ class AudioController extends Controller
 {
     /**
      * @param string $type Audio type. Defaults to mp3
+     * @param string|null $namespace string the value of the parameter sent to the server for the namespace,
+     * if it's not set up, no namespace will be sent
      * @return \yii\web\Response
      * @throws NotFoundHttpException
      */
-    public function actionIndex($type = 'mp3')
+    public function actionIndex($type = 'mp3', $namespace = null)
     {
         $captcha = $this->module->captcha;
+        $captcha->namespace = $namespace;
         $audioOption = $captcha->validAudioOption;
 
         if (!$audioOption) {
