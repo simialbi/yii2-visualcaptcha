@@ -27,3 +27,189 @@ msgstr "Refresh/reload icon"
 msgctxt "simialbi/visualcaptcha/input-widget"
 msgid "Refresh/reload: get new images and accessibility option!"
 msgstr "Refresh/reload: get new images and accessibility option!"
+
+
+#: components/Captcha.php
+msgctxt "simialbi/visualcaptcha/names"
+msgid "Airplane"
+msgstr "Airplane"
+
+#: components/Captcha.php
+msgctxt "simialbi/visualcaptcha/names"
+msgid "Balloons"
+msgstr "Balloons"
+
+#: components/Captcha.php
+msgctxt "simialbi/visualcaptcha/names"
+msgid "Camera"
+msgstr "Camera"
+
+#: components/Captcha.php
+msgctxt "simialbi/visualcaptcha/names"
+msgid "Car"
+msgstr "Car"
+
+#: components/Captcha.php
+msgctxt "simialbi/visualcaptcha/names"
+msgid "Cat"
+msgstr "Cat"
+
+#: components/Captcha.php
+msgctxt "simialbi/visualcaptcha/names"
+msgid "Chair"
+msgstr "Chair"
+
+#: components/Captcha.php
+msgctxt "simialbi/visualcaptcha/names"
+msgid "Clip"
+msgstr "Clip"
+
+#: components/Captcha.php
+msgctxt "simialbi/visualcaptcha/names"
+msgid "Clock"
+msgstr "Clock"
+
+#: components/Captcha.php
+msgctxt "simialbi/visualcaptcha/names"
+msgid "Cloud"
+msgstr "Cloud"
+
+#: components/Captcha.php
+msgctxt "simialbi/visualcaptcha/names"
+msgid "Computer"
+msgstr "Computer"
+
+#: components/Captcha.php
+msgctxt "simialbi/visualcaptcha/names"
+msgid "Envelope"
+msgstr "Envelope"
+
+#: components/Captcha.php
+msgctxt "simialbi/visualcaptcha/names"
+msgid "Eye"
+msgstr "Eye"
+
+#: components/Captcha.php
+msgctxt "simialbi/visualcaptcha/names"
+msgid "Flag"
+msgstr "Flag"
+
+#: components/Captcha.php
+msgctxt "simialbi/visualcaptcha/names"
+msgid "Folder"
+msgstr "Folder"
+
+#: components/Captcha.php
+msgctxt "simialbi/visualcaptcha/names"
+msgid "Foot"
+msgstr "Foot"
+
+#: components/Captcha.php
+msgctxt "simialbi/visualcaptcha/names"
+msgid "Graph"
+msgstr "Graph"
+
+#: components/Captcha.php
+msgctxt "simialbi/visualcaptcha/names"
+msgid "House"
+msgstr "House"
+
+#: components/Captcha.php
+msgctxt "simialbi/visualcaptcha/names"
+msgid "Key"
+msgstr "Key"
+
+#: components/Captcha.php
+msgctxt "simialbi/visualcaptcha/names"
+msgid "Leaf"
+msgstr "Leaf"
+
+#: components/Captcha.php
+msgctxt "simialbi/visualcaptcha/names"
+msgid "Light Bulb"
+msgstr "Light Bulb"
+
+#: components/Captcha.php
+msgctxt "simialbi/visualcaptcha/names"
+msgid "Lock"
+msgstr "Lock"
+
+#: components/Captcha.php
+msgctxt "simialbi/visualcaptcha/names"
+msgid "Magnifying Glass"
+msgstr "Magnifying Glass"
+
+#: components/Captcha.php
+msgctxt "simialbi/visualcaptcha/names"
+msgid "Man"
+msgstr "Man"
+
+#: components/Captcha.php
+msgctxt "simialbi/visualcaptcha/names"
+msgid "Music Note"
+msgstr "Music Note"
+
+#: components/Captcha.php
+msgctxt "simialbi/visualcaptcha/names"
+msgid "Pants"
+msgstr "Pants"
+
+#: components/Captcha.php
+msgctxt "simialbi/visualcaptcha/names"
+msgid "Pencil"
+msgstr "Pencil"
+
+#: components/Captcha.php
+msgctxt "simialbi/visualcaptcha/names"
+msgid "Printer"
+msgstr "Printer"
+
+#: components/Captcha.php
+msgctxt "simialbi/visualcaptcha/names"
+msgid "Robot"
+msgstr "Robot"
+
+#: components/Captcha.php
+msgctxt "simialbi/visualcaptcha/names"
+msgid "Scissors"
+msgstr "Scissors"
+
+#: components/Captcha.php
+msgctxt "simialbi/visualcaptcha/names"
+msgid "Sunglasses"
+msgstr "Sunglasses"
+
+#: components/Captcha.php
+msgctxt "simialbi/visualcaptcha/names"
+msgid "Tag"
+msgstr "Tag"
+
+#: components/Captcha.php
+msgctxt "simialbi/visualcaptcha/names"
+msgid "Tree"
+msgstr "Tree"
+
+#: components/Captcha.php
+msgctxt "simialbi/visualcaptcha/names"
+msgid "Truck"
+msgstr "Truck"
+
+#: components/Captcha.php
+msgctxt "simialbi/visualcaptcha/names"
+msgid "T-Shirt"
+msgstr "T-Shirt"
+
+#: components/Captcha.php
+msgctxt "simialbi/visualcaptcha/names"
+msgid "Umbrella"
+msgstr "Umbrella"
+
+#: components/Captcha.php
+msgctxt "simialbi/visualcaptcha/names"
+msgid "Woman"
+msgstr "Woman"
+
+#: components/Captcha.php
+msgctxt "simialbi/visualcaptcha/names"
+msgid "World"
+msgstr "World"

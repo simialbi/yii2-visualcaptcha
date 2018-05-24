@@ -28,6 +28,8 @@ class Module extends \simialbi\yii2\base\Module implements BootstrapInterface
     {
         parent::init();
 
+        $this->registerTranslations();
+
         if (!$this->has('captcha')) {
             $this->set('captcha', new components\Captcha());
         }

@@ -318,7 +318,7 @@ class Captcha extends Component
 
         $this->frontendData = [
             'values' => $imageValues,
-            'imageName' => ArrayHelper::getValue($this->validImageOption, 'name'),
+            'imageName' => Yii::t('simialbi/visualcaptcha/names', ArrayHelper::getValue($this->validImageOption, 'name')),
             'imageFieldName' => $this->utilRandomHex(10),
             'audioFieldName' => $this->utilRandomHex(10)
         ];
@@ -416,7 +416,7 @@ class Captcha extends Component
      */
     public function setValidAudioOption($validAudioOption)
     {
-        Yii::$app->session->get($this->sessionPrefix . 'validAudioOption', $validAudioOption);
+        Yii::$app->session->set($this->sessionPrefix . 'validAudioOption', $validAudioOption);
     }
 
     /**
