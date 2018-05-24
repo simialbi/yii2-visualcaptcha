@@ -88,9 +88,9 @@ class VisualCaptcha extends InputWidget
     {
         parent::run();
 
-        $html = $this->renderInputHtml('hidden');
-        $this->options['id'] .= '-container';
-        $html .= Html::tag('div', '', ['id' => $this->options['id']]);
+//        $html = $this->renderInputHtml('hidden');
+//        $this->options['id'] .= '-container';
+        $html = Html::tag('div', '', $this->options);
         $this->registerPlugin('visualCaptcha');
 
         return $html;
