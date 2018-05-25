@@ -60,7 +60,6 @@ JS;
     /**
      * {@inheritdoc}
      * @throws \yii\base\NotSupportedException
-     * @throws \yii\base\InvalidConfigException
      */
     public function validateAttribute($model, $attribute)
     {
@@ -80,9 +79,9 @@ JS;
         $this->captcha->namespace = $namespace;
         $imageFieldName = ArrayHelper::getValue($this->captcha->frontendData, 'imageFieldName');
         $audioFieldName = ArrayHelper::getValue($this->captcha->frontendData, 'audioFieldName');
-        if ($imageFieldName && $value = Yii::$app->request->getBodyParam($imageFieldName)) {
+        if ($imageFieldName && $val = ArrayHelper::getValue($value, $imageFieldName)) {
             return $this->captcha->validateImage($value) ? null : [$this->message, []];
-        } elseif ($audioFieldName && $value = Yii::$app->request->getBodyParam($imageFieldName)) {
+        } elseif ($audioFieldName && $val = ArrayHelper::getValue($value, $audioFieldName)) {
             return $this->captcha->validateAudio($value) ? null : [$this->message, []];
         }
         return false;
