@@ -77,14 +77,23 @@ JS;
     protected function validateValue($value, $namespace = null)
     {
         $this->captcha->namespace = $namespace;
-        $imageFieldName = ArrayHelper::getValue($this->captcha->frontendData, 'imageFieldName');
-        $audioFieldName = ArrayHelper::getValue($this->captcha->frontendData, 'audioFieldName');
+        $imageFieldName = trim(str_replace(
+            $namespace,
+            '',
+            ArrayHelper::getValue($this->captcha->frontendData, 'imageFieldName', '')
+        ), '[]');
+        $audioFieldName = trim(str_replace(
+            $namespace,
+            '',
+            ArrayHelper::getValue($this->captcha->frontendData, 'audioFieldName', '')
+        ), '[]');
+
         if ($imageFieldName && $val = ArrayHelper::getValue($value, $imageFieldName)) {
-            return $this->captcha->validateImage($value) ? null : [$this->message, []];
+            return $this->captcha->validateImage($val) ? null : [$this->message, []];
         } elseif ($audioFieldName && $val = ArrayHelper::getValue($value, $audioFieldName)) {
-            return $this->captcha->validateAudio($value) ? null : [$this->message, []];
+            return $this->captcha->validateAudio($val) ? null : [$this->message, []];
         }
-        return false;
+        return [$this->message, []];
     }
 
     /**
