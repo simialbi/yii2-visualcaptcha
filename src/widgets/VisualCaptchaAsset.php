@@ -14,7 +14,7 @@ class VisualCaptchaAsset extends AssetBundle
     /**
      * {@inheritdoc}
      */
-    public $sourcePath = '@vendor/desirepath/visualcaptcha-frontend/dist';
+    public $sourcePath = '@bower/visualcaptcha.jquery';
 
     /**
      * {@inheritdoc}

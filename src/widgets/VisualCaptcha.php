@@ -36,6 +36,7 @@ class VisualCaptcha extends InputWidget
 
     /**
      * {@inheritdoc}
+     * @throws \ReflectionException
      */
     public function init()
     {

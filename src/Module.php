@@ -23,6 +23,7 @@ class Module extends \simialbi\yii2\base\Module implements BootstrapInterface
     /**
      * {@inheritdoc}
      * @throws \yii\base\InvalidConfigException
+     * @throws \ReflectionException
      */
     public function init()
     {
