@@ -14,20 +14,20 @@ class VisualCaptchaAsset extends AssetBundle
     /**
      * {@inheritdoc}
      */
-    public $sourcePath = '@bower/visualcaptcha.jquery';
+    public $sourcePath = '@vendor/simialbi/yii2-visualcaptcha/src/assets';
 
     /**
      * {@inheritdoc}
      */
     public $css = [
-        'visualcaptcha.css'
+        'css/visualcaptcha.css'
     ];
 
     /**
      * {@inheritdoc}
      */
     public $js = [
-        'visualcaptcha.jquery.js'
+        'js/visualcaptcha.jquery.js'
     ];
 
     /**

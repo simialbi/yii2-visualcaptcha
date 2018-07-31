@@ -30,8 +30,7 @@
   "require": {
     "php": ">=5.6",
     "yiisoft/yii2": "~2.0",
-    "simialbi/yii2-simialbi-base": "^0.2",
-    "bower-asset/visualcaptcha.jquery": "^0.0.8"
+    "simialbi/yii2-simialbi-base": "^0.2"
   },
   "require-dev": {
     "yiisoft/yii2-coding-standards": "~2.0",
