@@ -85,7 +85,7 @@ $this->title = 'Visual Captcha';
 $this->params['breadcrumbs'][] = $this->title;
 
 ?>
-<div class="my-elfinder">
+<div class="my-visualcaptcha">
     <?php $form = ActiveForm::begin(['id' => 'test-form']); ?>
 	
     <?=$form->field($model, 'name')->textInput(['autofocus' => true]);?>
@@ -93,7 +93,23 @@ $this->params['breadcrumbs'][] = $this->title;
     <?=$form->field($model, 'subject');?>
     <?=$form->field($model, 'body')->textarea(['rows' => 6]);?>
     <?=$form->field($model, 'verifyCode')->widget(VisualCaptcha::class, [
-        'numberOfImages' => 10
+        'numberOfImages' => 10,
+        'clientOptions' => [
+            // change templates
+            'templates' => [
+                'button' => '
+                    <div class="visualCaptcha-{class}-button">
+                        <a href="javascript:;">
+                            <img src="{path}{class}{retinaExtra}.png" title="{classTitle}" alt="{classAlt}">
+                        </a>
+                    </div>',
+                'buttonGroup' => '
+                     <div class="visualCaptcha-button-group">
+                         {btnRefresh}
+                         {btnAccessibility}
+                     </div>'
+            ]
+        ]
     ]);?>
 
     <div class="form-group">

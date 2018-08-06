@@ -27,7 +27,7 @@ class VisualCaptchaAsset extends AssetBundle
      * {@inheritdoc}
      */
     public $js = [
-        'js/visualcaptcha.jquery.js'
+        'js/visualcaptcha.jquery.min.js'
     ];
 
     /**
