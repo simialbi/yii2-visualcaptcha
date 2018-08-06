@@ -1173,7 +1173,7 @@ define( 'visualcaptcha.vanilla',[
             // Add image elements
             templates.images( captcha, config.language ) +
             // Add refresh and accessibility buttons
-            templates.buttons( captcha, config.language, config.imgPath );
+            templates.buttons( captcha, config.language, config.imgPath, config.templates );
 
         // Actually add the HTML
         element.innerHTML = captchaHTML;
