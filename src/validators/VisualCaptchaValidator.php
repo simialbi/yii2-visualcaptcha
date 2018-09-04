@@ -9,7 +9,6 @@ namespace simialbi\yii2\visualcaptcha\validators;
 use Yii;
 use yii\helpers\ArrayHelper;
 use yii\helpers\Html;
-use yii\validators\ValidationAsset;
 use yii\validators\Validator;
 
 /**
@@ -39,22 +38,6 @@ class VisualCaptchaValidator extends Validator
         if ($this->message === null) {
             $this->message = Yii::t('yii', 'The verification code is incorrect.');
         }
-    }
-
-    /**
-     * {@inheritdoc}
-     */
-    public function clientValidateAttribute($model, $attribute, $view)
-    {
-        ValidationAsset::register($view);
-
-        $js = <<<JS
-if (!jQuery(attribute.input).data('captcha').getCaptchaData().valid) {
-	yii.validation.addMessage(messages, '{$this->message}', value);
-}
-JS;
-
-        return $js;
     }
 
     /**
