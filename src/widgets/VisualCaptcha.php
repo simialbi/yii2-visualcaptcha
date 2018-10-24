@@ -35,12 +35,25 @@ class VisualCaptcha extends InputWidget
     public $imgPath = '@web/img/';
 
     /**
+     * @var string the value of the parameter sent to the server for the namespace, if it's not set up,
+     * it will be auto generated
+     */
+    public $namespace;
+
+    /**
      * {@inheritdoc}
      * @throws \ReflectionException
      */
     public function init()
     {
         parent::init();
+
+        if (!isset($this->namespace)) {
+            $this->namespace = $this->hasModel()
+                ? Html::getInputName($this->model, $this->attribute)
+                : $this->name;
+            $this->namespace .= $this->options['id'];
+        }
 
         $this->registerTranslations();
 
@@ -74,9 +87,7 @@ class VisualCaptcha extends InputWidget
         $this->clientOptions['captcha'] = [
             'url' => Url::to(['/' . $this->moduleId]),
             'numberOfImages' => $this->numberOfImages,
-            'namespace' => $this->hasModel()
-                ? Html::getInputName($this->model, $this->attribute)
-                : $this->name,
+            'namespace' => $this->namespace,
             'namespaceFieldName' => 'namespace',
             'routes' => [
                 'start' => '/start',
