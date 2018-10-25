@@ -52,7 +52,7 @@ class VisualCaptcha extends InputWidget
             $this->namespace = $this->hasModel()
                 ? Html::getInputName($this->model, $this->attribute)
                 : $this->name;
-            $this->namespace .= $this->options['id'];
+            $this->namespace .= '[' . $this->options['id'] . ']';
         }
 
         $this->registerTranslations();

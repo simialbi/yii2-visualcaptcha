@@ -47,7 +47,9 @@ class VisualCaptchaValidator extends Validator
     public function validateAttribute($model, $attribute)
     {
         $namespace = Yii::$app->request->getBodyParam('namespace', Html::getInputName($model, $attribute));
-        $result = $this->validateValue($model->$attribute, $namespace);
+        $namespaceString = str_replace([Html::getInputName($model, $attribute), '[', ']'], '', $namespace);
+        $value = ArrayHelper::getValue($model->$attribute, $namespaceString, $model->$attribute);
+        $result = $this->validateValue($value, $namespace);
         if (!empty($result)) {
             $this->addError($model, $attribute, $result[0], $result[1]);
         }
