@@ -41,7 +41,7 @@ class ImageController extends Controller
         }
 
         $imageFileName = ArrayHelper::getValue($imageOption, 'path', '');
-        $imageFilePath = Yii::getAlias('@visualcaptcha/assets/images/' . $imageFileName);
+        $imageFilePath = Yii::getAlias($imageFileName);
 
         if ($retina) {
             $imageFileName = substr_replace($imageFileName, '@2x.png', -4);

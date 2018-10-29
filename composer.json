@@ -36,6 +36,9 @@
     "yiisoft/yii2-coding-standards": "~2.0",
     "phpunit/phpunit": "*"
   },
+  "suggest": {
+    "ext-openssl": "Needed in captcha component in utilRandomHex method if yii method fails"
+  },
   "config": {
     "process-timeout": 1800
   },

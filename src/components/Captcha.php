@@ -30,151 +30,151 @@ class Captcha extends Component
     public $imageOptions = [
         [
             'name' => 'Airplane',
-            'path' => 'airplane.png'
+            'path' => '@visualcaptcha/assets/images/airplane.png'
         ],
         [
             'name' => 'Balloons',
-            'path' => 'balloons.png'
+            'path' => '@visualcaptcha/assets/images/balloons.png'
         ],
         [
             'name' => 'Camera',
-            'path' => 'camera.png'
+            'path' => '@visualcaptcha/assets/images/camera.png'
         ],
         [
             'name' => 'Car',
-            'path' => 'car.png'
+            'path' => '@visualcaptcha/assets/images/car.png'
         ],
         [
             'name' => 'Cat',
-            'path' => 'cat.png'
+            'path' => '@visualcaptcha/assets/images/cat.png'
         ],
         [
             'name' => 'Chair',
-            'path' => 'chair.png'
+            'path' => '@visualcaptcha/assets/images/chair.png'
         ],
         [
             'name' => 'Clip',
-            'path' => 'clip.png'
+            'path' => '@visualcaptcha/assets/images/clip.png'
         ],
         [
             'name' => 'Clock',
-            'path' => 'clock.png'
+            'path' => '@visualcaptcha/assets/images/clock.png'
         ],
         [
             'name' => 'Cloud',
-            'path' => 'cloud.png'
+            'path' => '@visualcaptcha/assets/images/cloud.png'
         ],
         [
             'name' => 'Computer',
-            'path' => 'computer.png'
+            'path' => '@visualcaptcha/assets/images/computer.png'
         ],
         [
             'name' => 'Envelope',
-            'path' => 'envelope.png'
+            'path' => '@visualcaptcha/assets/images/envelope.png'
         ],
         [
             'name' => 'Eye',
-            'path' => 'eye.png'
+            'path' => '@visualcaptcha/assets/images/eye.png'
         ],
         [
             'name' => 'Flag',
-            'path' => 'flag.png'
+            'path' => '@visualcaptcha/assets/images/flag.png'
         ],
         [
             'name' => 'Folder',
-            'path' => 'folder.png'
+            'path' => '@visualcaptcha/assets/images/folder.png'
         ],
         [
             'name' => 'Foot',
-            'path' => 'foot.png'
+            'path' => '@visualcaptcha/assets/images/foot.png'
         ],
         [
             'name' => 'Graph',
-            'path' => 'graph.png'
+            'path' => '@visualcaptcha/assets/images/graph.png'
         ],
         [
             'name' => 'House',
-            'path' => 'house.png'
+            'path' => '@visualcaptcha/assets/images/house.png'
         ],
         [
             'name' => 'Key',
-            'path' => 'key.png'
+            'path' => '@visualcaptcha/assets/images/key.png'
         ],
         [
             'name' => 'Leaf',
-            'path' => 'leaf.png'
+            'path' => '@visualcaptcha/assets/images/leaf.png'
         ],
         [
             'name' => 'Light Bulb',
-            'path' => 'light-bulb.png'
+            'path' => '@visualcaptcha/assets/images/light-bulb.png'
         ],
         [
             'name' => 'Lock',
-            'path' => 'lock.png'
+            'path' => '@visualcaptcha/assets/images/lock.png'
         ],
         [
             'name' => 'Magnifying Glass',
-            'path' => 'magnifying-glass.png'
+            'path' => '@visualcaptcha/assets/images/magnifying-glass.png'
         ],
         [
             'name' => 'Man',
-            'path' => 'man.png'
+            'path' => '@visualcaptcha/assets/images/man.png'
         ],
         [
             'name' => 'Music Note',
-            'path' => 'music-note.png'
+            'path' => '@visualcaptcha/assets/images/music-note.png'
         ],
         [
             'name' => 'Pants',
-            'path' => 'pants.png'
+            'path' => '@visualcaptcha/assets/images/pants.png'
         ],
         [
             'name' => 'Pencil',
-            'path' => 'pencil.png'
+            'path' => '@visualcaptcha/assets/images/pencil.png'
         ],
         [
             'name' => 'Printer',
-            'path' => 'printer.png'
+            'path' => '@visualcaptcha/assets/images/printer.png'
         ],
         [
             'name' => 'Robot',
-            'path' => 'robot.png'
+            'path' => '@visualcaptcha/assets/images/robot.png'
         ],
         [
             'name' => 'Scissors',
-            'path' => 'scissors.png'
+            'path' => '@visualcaptcha/assets/images/scissors.png'
         ],
         [
             'name' => 'Sunglasses',
-            'path' => 'sunglasses.png'
+            'path' => '@visualcaptcha/assets/images/sunglasses.png'
         ],
         [
             'name' => 'Tag',
-            'path' => 'tag.png'
+            'path' => '@visualcaptcha/assets/images/tag.png'
         ],
         [
             'name' => 'Tree',
-            'path' => 'tree.png'
+            'path' => '@visualcaptcha/assets/images/tree.png'
         ],
         [
             'name' => 'Truck',
-            'path' => 'truck.png'
+            'path' => '@visualcaptcha/assets/images/truck.png'
         ],
         [
             'name' => 'T-Shirt',
-            'path' => 't-shirt.png'
+            'path' => '@visualcaptcha/assets/images/t-shirt.png'
         ],
         [
             'name' => 'Umbrella',
-            'path' => 'umbrella.png'
+            'path' => '@visualcaptcha/assets/images/umbrella.png'
         ],
         [
             'name' => 'Woman',
-            'path' => 'woman.png'
+            'path' => '@visualcaptcha/assets/images/woman.png'
         ],
         [
             'name' => 'World',
-            'path' => 'world.png'
+            'path' => '@visualcaptcha/assets/images/world.png'
         ]
     ];
     /**
@@ -183,83 +183,83 @@ class Captcha extends Component
      */
     public $audioOptions = [
         [
-            'path' => '5times2.mp3',
+            'path' => '@visualcaptcha/assets/audios/5times2.mp3',
             'value' => '10'
         ],
         [
-            'path' => '2times10.mp3',
+            'path' => '@visualcaptcha/assets/audios/2times10.mp3',
             'value' => '20'
         ],
         [
-            'path' => '5plus1.mp3',
+            'path' => '@visualcaptcha/assets/audios/5plus1.mp3',
             'value' => '6'
         ],
         [
-            'path' => '4plus1.mp3',
+            'path' => '@visualcaptcha/assets/audios/4plus1.mp3',
             'value' => '5'
         ],
         [
-            'path' => '4plus3.mp3',
+            'path' => '@visualcaptcha/assets/audios/4plus3.mp3',
             'value' => '7'
         ],
         [
-            'path' => '6plus6.mp3',
+            'path' => '@visualcaptcha/assets/audios/6plus6.mp3',
             'value' => '12'
         ],
         [
-            'path' => '12times2.mp3',
+            'path' => '@visualcaptcha/assets/audios/12times2.mp3',
             'value' => '24'
         ],
         [
-            'path' => '99plus1.mp3',
+            'path' => '@visualcaptcha/assets/audios/99plus1.mp3',
             'value' => '100'
         ],
         [
-            'path' => 'add3to1.mp3',
+            'path' => '@visualcaptcha/assets/audios/add3to1.mp3',
             'value' => '4'
         ],
         [
-            'path' => 'addblueandyellow.mp3',
+            'path' => '@visualcaptcha/assets/audios/addblueandyellow.mp3',
             'value' => 'green'
         ],
         [
-            'path' => 'after2.mp3',
+            'path' => '@visualcaptcha/assets/audios/after2.mp3',
             'value' => '3'
         ],
         [
-            'path' => 'divide4by2.mp3',
+            'path' => '@visualcaptcha/assets/audios/divide4by2.mp3',
             'value' => '2'
         ],
         [
-            'path' => 'milkcolor.mp3',
+            'path' => '@visualcaptcha/assets/audios/milkcolor.mp3',
             'value' => 'white'
         ],
         [
-            'path' => 'skycolor.mp3',
+            'path' => '@visualcaptcha/assets/audios/skycolor.mp3',
             'value' => 'blue'
         ],
         [
-            'path' => 'sunastar.mp3',
+            'path' => '@visualcaptcha/assets/audios/sunastar.mp3',
             'value' => 'yes'
         ],
         [
-            'path' => 'yourobot.mp3',
+            'path' => '@visualcaptcha/assets/audios/yourobot.mp3',
             'value' => 'no'
         ],
         [
-            'path' => 'capitaloffrance.mp3',
+            'path' => '@visualcaptcha/assets/audios/capitaloffrance.mp3',
             'value' => 'paris'
         ],
         [
-            'path' => 'skynight.mp3',
+            'path' => '@visualcaptcha/assets/audios/skynight.mp3',
             'value' => 'black'
         ],
         [
-            'path' => 'thirdmonth.mp3',
+            'path' => '@visualcaptcha/assets/audios/thirdmonth.mp3',
             'value' => 'march|3'
         ],
         [
-            'path' => 'firstletteralphabet.mp3',
+            'path' => '@visualcaptcha/assets/audios/firstletteralphabet.mp3',
             'value' => 'a'
         ]
     ];

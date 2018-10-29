@@ -37,7 +37,7 @@ class AudioController extends Controller
         }
 
         $audioFileName = ArrayHelper::getValue($audioOption, 'path', '');
-        $audioFilePath = Yii::getAlias('@visualcaptcha/assets/audios/' . $audioFileName);
+        $audioFilePath = Yii::getAlias($audioFileName);
 
         if ($type === 'ogg') {
             $audioFileName = substr_replace($audioFileName, '.ogg', -4);
