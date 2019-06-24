@@ -1,197 +1,197 @@
 #: widgets/VisualCaptcha.php
 msgctxt "simialbi/visualcaptcha/input-widget"
 msgid "Sound icon"
-msgstr "Sound"
+msgstr "Sonore"
 
 #: widgets/VisualCaptcha.php
 msgctxt "simialbi/visualcaptcha/input-widget"
 msgid "Accessibility option: listen to a question and answer it!"
-msgstr "Alternative: Höre eine Frage und beantworte sie!"
+msgstr "Alternative: écoutez une question et répondez-la!"
 
 #: widgets/VisualCaptcha.php
 msgctxt "simialbi/visualcaptcha/input-widget"
 msgid "Type below the <strong>answer</strong> to what you hear. Numbers or words:"
-msgstr "Gib die <strong>Antwort</strong> auf die gehörte Frage unten ein:"
+msgstr "Entrez la <strong>Résponse</strong> à la question ci-dessous:"
 
 #: widgets/VisualCaptcha.php
 msgctxt "simialbi/visualcaptcha/input-widget"
 msgid "Click or touch the <strong>ANSWER</strong>"
-msgstr "Wähle <strong>ANSWER</strong> aus" # Do not translate the word ANSWER. It will be replaced clientside
+msgstr "Choisir <strong>ANSWER</strong>" # Do not translate the word ANSWER. It will be replaced clientside
 
 #: widgets/VisualCaptcha.php
 msgctxt "simialbi/visualcaptcha/input-widget"
 msgid "Refresh/reload icon"
-msgstr "Aktualisieren"
+msgstr "Mettre à jour"
 
 #: widgets/VisualCaptcha.php
 msgctxt "simialbi/visualcaptcha/input-widget"
 msgid "Refresh/reload: get new images and accessibility option!"
-msgstr "Aktualisieren"
+msgstr "Mettre à jour"
 
-#: components/Captcha.php
-msgctxt "simialbi/visualcaptcha/names"
+#: widgets/VisualCaptcha.php
+msgctxt "simialbi/visualcaptcha/input-widget"
 msgid "Airplane"
-msgstr "Flugzeug"
+msgstr "Avion"
 
 #: components/Captcha.php
 msgctxt "simialbi/visualcaptcha/names"
 msgid "Balloons"
-msgstr "Ballone"
+msgstr "Ballons"
 
 #: components/Captcha.php
 msgctxt "simialbi/visualcaptcha/names"
 msgid "Camera"
-msgstr "Kamera"
+msgstr "Appareil photo"
 
 #: components/Captcha.php
 msgctxt "simialbi/visualcaptcha/names"
 msgid "Car"
-msgstr "Auto"
+msgstr "Voiture"
 
 #: components/Captcha.php
 msgctxt "simialbi/visualcaptcha/names"
 msgid "Cat"
-msgstr "Katze"
+msgstr "Chat"
 
 #: components/Captcha.php
 msgctxt "simialbi/visualcaptcha/names"
 msgid "Chair"
-msgstr "Stuhl"
+msgstr "Chaise"
 
 #: components/Captcha.php
 msgctxt "simialbi/visualcaptcha/names"
 msgid "Clip"
-msgstr "Büroklammer"
+msgstr "Trombone"
 
 #: components/Captcha.php
 msgctxt "simialbi/visualcaptcha/names"
 msgid "Clock"
-msgstr "Uhr"
+msgstr "Horloge"
 
 #: components/Captcha.php
 msgctxt "simialbi/visualcaptcha/names"
 msgid "Cloud"
-msgstr "Wolke"
+msgstr "Nuage"
 
 #: components/Captcha.php
 msgctxt "simialbi/visualcaptcha/names"
 msgid "Computer"
-msgstr "Computer"
+msgstr "Ordinateur"
 
 #: components/Captcha.php
 msgctxt "simialbi/visualcaptcha/names"
 msgid "Envelope"
-msgstr "Umschlag"
+msgstr "Enveloppe"
 
 #: components/Captcha.php
 msgctxt "simialbi/visualcaptcha/names"
 msgid "Eye"
-msgstr "Auge"
+msgstr "Oeil"
 
 #: components/Captcha.php
 msgctxt "simialbi/visualcaptcha/names"
 msgid "Flag"
-msgstr "Flagge"
+msgstr "Drapeau"
 
 #: components/Captcha.php
 msgctxt "simialbi/visualcaptcha/names"
 msgid "Folder"
-msgstr "Ordner"
+msgstr "Dossier"
 
 #: components/Captcha.php
 msgctxt "simialbi/visualcaptcha/names"
 msgid "Foot"
-msgstr "Fuss"
+msgstr "Pied"
 
 #: components/Captcha.php
 msgctxt "simialbi/visualcaptcha/names"
 msgid "Graph"
-msgstr "Graph"
+msgstr " Graphique"
 
 #: components/Captcha.php
 msgctxt "simialbi/visualcaptcha/names"
 msgid "House"
-msgstr "Haus"
+msgstr "Maison"
 
 #: components/Captcha.php
 msgctxt "simialbi/visualcaptcha/names"
 msgid "Key"
-msgstr "Schlüssel"
+msgstr "Clé"
 
 #: components/Captcha.php
 msgctxt "simialbi/visualcaptcha/names"
 msgid "Leaf"
-msgstr "Blatt"
+msgstr "Feuille"
 
 #: components/Captcha.php
 msgctxt "simialbi/visualcaptcha/names"
 msgid "Light Bulb"
-msgstr "Glühbirne"
+msgstr "Ampoule"
 
 #: components/Captcha.php
 msgctxt "simialbi/visualcaptcha/names"
 msgid "Lock"
-msgstr "Schloss"
+msgstr "Serrure"
 
 #: components/Captcha.php
 msgctxt "simialbi/visualcaptcha/names"
 msgid "Magnifying Glass"
-msgstr "Lupe"
+msgstr "Loupe"
 
 #: components/Captcha.php
 msgctxt "simialbi/visualcaptcha/names"
 msgid "Man"
-msgstr "Mann"
+msgstr "Homme"
 
 #: components/Captcha.php
 msgctxt "simialbi/visualcaptcha/names"
 msgid "Music Note"
-msgstr "Musik Note"
+msgstr "Note de musique"
 
 #: components/Captcha.php
 msgctxt "simialbi/visualcaptcha/names"
 msgid "Pants"
-msgstr "Hosen"
+msgstr "Pantalon"
 
 #: components/Captcha.php
 msgctxt "simialbi/visualcaptcha/names"
 msgid "Pencil"
-msgstr "Stift"
+msgstr "Goupille"
 
 #: components/Captcha.php
 msgctxt "simialbi/visualcaptcha/names"
 msgid "Printer"
-msgstr "Drucker"
+msgstr "Imprimeur"
 
 #: components/Captcha.php
 msgctxt "simialbi/visualcaptcha/names"
 msgid "Robot"
-msgstr "Roboter"
+msgstr "Robot"
 
 #: components/Captcha.php
 msgctxt "simialbi/visualcaptcha/names"
 msgid "Scissors"
-msgstr "Schere"
+msgstr "Ciseaux"
 
 #: components/Captcha.php
 msgctxt "simialbi/visualcaptcha/names"
 msgid "Sunglasses"
-msgstr "Sonnenbrille"
+msgstr "Lunettes de soleil"
 
 #: components/Captcha.php
 msgctxt "simialbi/visualcaptcha/names"
 msgid "Tag"
-msgstr "Anhängeschildchen"
+msgstr "Étiquette"
 
 #: components/Captcha.php
 msgctxt "simialbi/visualcaptcha/names"
 msgid "Tree"
-msgstr "Baum"
+msgstr "Arbre"
 
 #: components/Captcha.php
 msgctxt "simialbi/visualcaptcha/names"
 msgid "Truck"
-msgstr "Lastwagen"
+msgstr "Camion"
 
 #: components/Captcha.php
 msgctxt "simialbi/visualcaptcha/names"
@@ -201,14 +201,14 @@ msgstr "T-Shirt"
 #: components/Captcha.php
 msgctxt "simialbi/visualcaptcha/names"
 msgid "Umbrella"
-msgstr "Regenschirm"
+msgstr "Parapluie"
 
 #: components/Captcha.php
 msgctxt "simialbi/visualcaptcha/names"
 msgid "Woman"
-msgstr "Frau"
+msgstr "Femme"
 
 #: components/Captcha.php
 msgctxt "simialbi/visualcaptcha/names"
 msgid "World"
-msgstr "Globus"
+msgstr "Globe"

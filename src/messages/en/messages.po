@@ -28,7 +28,6 @@ msgctxt "simialbi/visualcaptcha/input-widget"
 msgid "Refresh/reload: get new images and accessibility option!"
 msgstr "Refresh/reload: get new images and accessibility option!"
 
-
 #: components/Captcha.php
 msgctxt "simialbi/visualcaptcha/names"
 msgid "Airplane"
