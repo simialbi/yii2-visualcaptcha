@@ -30,11 +30,11 @@
   "require": {
     "php": ">=5.6",
     "yiisoft/yii2": "^2.0.15",
-    "simialbi/yii2-simialbi-base": "^0.4"
+    "simialbi/yii2-simialbi-base": "^0.5"
   },
   "require-dev": {
     "yiisoft/yii2-coding-standards": "~2.0",
-    "phpunit/phpunit": "*"
+    "phpunit/phpunit": "< 7"
   },
   "suggest": {
     "ext-openssl": "Needed in captcha component in utilRandomHex method if yii method fails"
