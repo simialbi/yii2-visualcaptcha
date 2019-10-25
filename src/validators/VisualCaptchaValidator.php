@@ -9,6 +9,7 @@ namespace simialbi\yii2\visualcaptcha\validators;
 use Yii;
 use yii\helpers\ArrayHelper;
 use yii\helpers\Html;
+use yii\helpers\Json;
 use yii\validators\Validator;
 
 /**
@@ -80,6 +81,23 @@ class VisualCaptchaValidator extends Validator
             return $this->captcha->validateAudio($val) ? null : [$this->message, []];
         }
         return [$this->message, []];
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function clientValidateAttribute($model, $attribute, $view)
+    {
+        $message = Json::encode(Yii::t('yii', '{attribute} cannot be blank.', [
+            'attribute' => $model->getAttributeLabel($attribute)
+        ]));
+        $fieldId = Html::getInputId($model, $attribute);
+
+        return <<<JS
+if (!jQuery('#$fieldId .img.visualCaptcha-selected').length) {
+    messages.push($message);
+}
+JS;
     }
 
     /**
