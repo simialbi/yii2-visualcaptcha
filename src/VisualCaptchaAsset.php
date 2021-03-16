@@ -4,11 +4,13 @@
  * @author Simon Karlen <simi.albi@gmail.com>
  */
 
-namespace simialbi\yii2\visualcaptcha\widgets;
-
+namespace simialbi\yii2\visualcaptcha;
 
 use simialbi\yii2\web\AssetBundle;
 
+/**
+ * Visual Captcha Asset bundle
+ */
 class VisualCaptchaAsset extends AssetBundle
 {
     /**
