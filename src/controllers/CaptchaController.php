@@ -6,6 +6,8 @@
 
 namespace simialbi\yii2\visualcaptcha\controllers;
 
+use Yii;
+use yii\filters\AccessControl;
 use yii\filters\ContentNegotiator;
 use yii\web\Controller;
 use yii\web\Response;
@@ -24,6 +26,24 @@ class CaptchaController extends Controller
     public function behaviors()
     {
         return [
+            'access' => [
+                'class' => AccessControl::class,
+                'rules' => [
+                    [
+                        'allow' => true,
+                        'actions' => ['index'],
+                        'matchCallback' => function () {
+                            if (empty(Yii::$app->request->referrer)) {
+                                return false;
+                            }
+                            $referrer = parse_url(Yii::$app->request->referrer, PHP_URL_HOST);
+                            $host = Yii::$app->request->hostName;
+
+                            return strcasecmp($referrer, $host) === 0;
+                        }
+                    ]
+                ]
+            ],
             'contentNegotiator' => [
                 'class' => ContentNegotiator::class,
                 'formats' => [
