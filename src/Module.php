@@ -23,7 +23,6 @@ class Module extends \simialbi\yii2\base\Module implements BootstrapInterface
     /**
      * {@inheritdoc}
      * @throws \yii\base\InvalidConfigException
-     * @throws \ReflectionException
      */
     public function init()
     {
@@ -41,7 +40,7 @@ class Module extends \simialbi\yii2\base\Module implements BootstrapInterface
      * @return null|components\Captcha
      * @throws \yii\base\InvalidConfigException
      */
-    public function getCaptcha()
+    public function getCaptcha(): ?components\Captcha
     {
         $captcha = $this->get('captcha');
         /* @var components\Captcha $captcha */

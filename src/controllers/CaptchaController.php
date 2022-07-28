@@ -23,7 +23,7 @@ class CaptchaController extends Controller
     /**
      * {@inheritdoc}
      */
-    public function behaviors()
+    public function behaviors(): array
     {
         return [
             'access' => [
@@ -58,8 +58,9 @@ class CaptchaController extends Controller
      * @param string|null $namespace string the value of the parameter sent to the server for the namespace,
      * if it's not set up, no namespace will be sent
      * @return array
+     * @throws \Exception
      */
-    public function actionIndex($howMany = 5, $namespace = null)
+    public function actionIndex(int $howMany = 5, ?string $namespace = null): array
     {
         $captcha = $this->module->captcha;
         $captcha->namespace = $namespace;

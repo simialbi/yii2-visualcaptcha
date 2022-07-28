@@ -29,8 +29,9 @@ class ImageController extends Controller
      *
      * @throws NotFoundHttpException
      * @throws \yii\web\RangeNotSatisfiableHttpException
+     * @throws \Exception
      */
-    public function actionIndex($index, $retina = false, $namespace = null)
+    public function actionIndex(int $index, bool $retina = false, ?string $namespace = null): \yii\web\Response
     {
         $captcha = $this->module->captcha;
         $captcha->namespace = $namespace;

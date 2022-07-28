@@ -59,8 +59,9 @@ class VisualCaptchaValidator extends Validator
      * {@inheritdoc}
      * @param string|null $namespace string the value of the parameter sent to the server for the namespace,
      * if it's not set up, no namespace will be sent
+     * @throws \Exception
      */
-    protected function validateValue($value, $namespace = null)
+    protected function validateValue($value, ?string $namespace = null): ?array
     {
         $this->captcha->namespace = $namespace;
         $imageFieldName = trim(str_replace(
@@ -86,7 +87,7 @@ class VisualCaptchaValidator extends Validator
      * Get captcha component
      * @return \simialbi\yii2\visualcaptcha\components\Captcha
      */
-    protected function getCaptcha()
+    protected function getCaptcha(): \simialbi\yii2\visualcaptcha\components\Captcha
     {
         $module = Yii::$app->getModule($this->moduleId);
         /* @var $module \simialbi\yii2\visualcaptcha\Module */

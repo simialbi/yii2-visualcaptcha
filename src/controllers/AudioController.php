@@ -26,7 +26,7 @@ class AudioController extends Controller
      * @return \yii\web\Response
      * @throws NotFoundHttpException
      */
-    public function actionIndex($type = 'mp3', $namespace = null)
+    public function actionIndex(string $type = 'mp3', ?string $namespace = null): \yii\web\Response
     {
         $captcha = $this->module->captcha;
         $captcha->namespace = $namespace;

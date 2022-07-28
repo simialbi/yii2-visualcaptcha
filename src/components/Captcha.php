@@ -277,8 +277,9 @@ class Captcha extends Component
     /**
      * Generate a new valid option
      * @param integer $numberOfOptions Number of options. This parameter is optional. Defaults to 5.
+     * @throws \Exception
      */
-    public function generate($numberOfOptions = 5)
+    public function generate(int $numberOfOptions = 5)
     {
         $imageValues = [];
 
@@ -311,22 +312,28 @@ class Captcha extends Component
 
         do {
             $newImageOption = $this->utilArraySample($this->sessionImageOptions);
-        } while ($oldImageOption && ArrayHelper::getValue($oldImageOption,
-            'path') === ArrayHelper::getValue($newImageOption, 'path'));
+        } while (
+            $oldImageOption &&
+            ArrayHelper::getValue($oldImageOption, 'path') === ArrayHelper::getValue($newImageOption, 'path')
+        );
 
         $this->validImageOption = $newImageOption;
 
         do {
             $newAudioOption = $this->utilArraySample($this->audioOptions);
-        } while ($oldAudioOption && ArrayHelper::getValue($oldAudioOption,
-            'path') === ArrayHelper::getValue($newAudioOption, 'path'));
+        } while (
+            $oldAudioOption &&
+            ArrayHelper::getValue($oldAudioOption, 'path') === ArrayHelper::getValue($newAudioOption, 'path')
+        );
 
         $this->validAudioOption = $newAudioOption;
 
         $this->frontendData = [
             'values' => $imageValues,
-            'imageName' => Yii::t('simialbi/visualcaptcha/names',
-                ArrayHelper::getValue($this->validImageOption, 'name')),
+            'imageName' => Yii::t(
+                'simialbi/visualcaptcha/names',
+                ArrayHelper::getValue($this->validImageOption, 'name')
+            ),
             'imageFieldName' => $this->namespace ? $this->namespace . '[' . $this->utilRandomHex(10) . ']' : $this->utilRandomHex(10),
             'audioFieldName' => $this->namespace ? $this->namespace . '[' . $this->utilRandomHex(10) . ']' : $this->utilRandomHex(10)
         ];
@@ -338,7 +345,7 @@ class Captcha extends Component
      * @param integer $count
      * @return array
      */
-    private function utilArraySample($arr, $count = 1)
+    private function utilArraySample(array $arr, int $count = 1): array
     {
         if ($count == 1) {
             return $arr[array_rand($arr)];
@@ -362,7 +369,7 @@ class Captcha extends Component
      * @param integer $count
      * @return string
      */
-    private function utilRandomHex($count)
+    private function utilRandomHex(int $count): string
     {
         try {
             $bytes = Yii::$app->security->generateRandomKey($count);
@@ -375,35 +382,35 @@ class Captcha extends Component
 
     /**
      * Get data to be used by the frontend
-     * @return array
+     * @return array|null
      */
-    public function getFrontendData()
+    public function getFrontendData(): ?array
     {
         return Yii::$app->session->get($this->sessionPrefix . 'frontendData');
     }
 
     /**
      * Set data to be used by the frontend
-     * @param array $frontendData
+     * @param array|null $frontendData
      */
-    public function setFrontendData($frontendData)
+    public function setFrontendData(?array $frontendData)
     {
         Yii::$app->session->set($this->sessionPrefix . 'frontendData', $frontendData);
     }
 
     /**
-     * @return string
+     * @return string|null
      */
-    public function getNamespace()
+    public function getNamespace(): ?string
     {
         return $this->_namespace;
     }
 
     /**
      *
-     * @param string $namespace
+     * @param string|null $namespace
      */
-    public function setNamespace($namespace)
+    public function setNamespace(?string $namespace)
     {
         $this->_namespace = $namespace;
 
@@ -417,54 +424,54 @@ class Captcha extends Component
 
     /**
      * Get the current validImageOption
-     * @return array
+     * @return array|null
      */
-    public function getValidImageOption()
+    public function getValidImageOption(): ?array
     {
         return Yii::$app->session->get($this->sessionPrefix . 'validImageOption');
     }
 
     /**
      * Set the current validImageOption
-     * @param array $validImageOption
+     * @param array|null $validImageOption
      */
-    public function setValidImageOption($validImageOption)
+    public function setValidImageOption(?array $validImageOption)
     {
         Yii::$app->session->set($this->sessionPrefix . 'validImageOption', $validImageOption);
     }
 
     /**
      * Get the current validAudioOption
-     * @return array
+     * @return array|null
      */
-    public function getValidAudioOption()
+    public function getValidAudioOption(): ?array
     {
         return Yii::$app->session->get($this->sessionPrefix . 'validAudioOption');
     }
 
     /**
      * Get the current validAudioOption
-     * @param array $validAudioOption
+     * @param array|null $validAudioOption
      */
-    public function setValidAudioOption($validAudioOption)
+    public function setValidAudioOption(?array $validAudioOption)
     {
         Yii::$app->session->set($this->sessionPrefix . 'validAudioOption', $validAudioOption);
     }
 
     /**
      * Return generated image options
-     * @return array
+     * @return array|null
      */
-    public function getSessionImageOptions()
+    public function getSessionImageOptions(): ?array
     {
         return Yii::$app->session->get($this->sessionPrefix . 'images');
     }
 
     /**
      * Set generated image options
-     * @param array $images
+     * @param array|null $images
      */
-    public function setSessionImageOptions($images)
+    public function setSessionImageOptions(?array $images)
     {
         Yii::$app->session->set($this->sessionPrefix . 'images', $images);
     }
@@ -473,8 +480,9 @@ class Captcha extends Component
      * Validate the sent image value with the validImageOption
      * @param string $sentOption
      * @return boolean
+     * @throws \Exception
      */
-    public function validateImage($sentOption)
+    public function validateImage(string $sentOption): bool
     {
         return ($sentOption == ArrayHelper::getValue($this->validImageOption, 'value'));
     }
@@ -483,8 +491,9 @@ class Captcha extends Component
      * Validate the sent audio value with the validAudioOption
      * @param string $sentOption
      * @return boolean
+     * @throws \Exception
      */
-    public function validateAudio($sentOption)
+    public function validateAudio(string $sentOption): bool
     {
         $validAnswers = explode('|', strtoupper(ArrayHelper::getValue($this->validAudioOption, 'value')));
         return (in_array(strtoupper($sentOption), $validAnswers));
@@ -493,9 +502,9 @@ class Captcha extends Component
     /**
      * Return the image string from cache to avoid I/O
      * @param string $filePath
-     * @return bool|string
+     * @return string
      */
-    public function getImage($filePath)
+    public function getImage(string $filePath): string
     {
         if (Yii::$app->cache) {
             $cacheKey = md5($filePath);

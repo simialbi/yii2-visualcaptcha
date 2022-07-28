@@ -42,9 +42,8 @@ class VisualCaptcha extends InputWidget
 
     /**
      * {@inheritdoc}
-     * @throws \ReflectionException
      */
-    public function init()
+    public function init(): void
     {
         parent::init();
 
@@ -100,7 +99,7 @@ class VisualCaptcha extends InputWidget
     /**
      * {@inheritdoc}
      */
-    public function run()
+    public function run(): string
     {
         parent::run();
 

@@ -1,55 +1,58 @@
 {
-  "name": "simialbi/yii2-visualcaptcha",
-  "description": "Visual captcha implementation for yii2 framework",
-  "keywords": [
-    "yii2",
-    "visualcaptcha",
-    "visual",
-    "captcha",
-    "widget"
-  ],
-  "type": "yii2-extension",
-  "license": "MIT",
-  "support": {
-    "issues": "https://github.com/simialbi/yii2-visualcaptcha/issues",
-    "source": "https://github.com/simialbi/yii2-visualcaptcha"
-  },
-  "authors": [
-    {
-      "name": "Simon Karlen",
-      "email": "simi.albi@gmail.com"
+    "name": "simialbi/yii2-visualcaptcha",
+    "description": "Visual captcha implementation for yii2 framework",
+    "keywords": [
+        "yii2",
+        "visualcaptcha",
+        "visual",
+        "captcha",
+        "widget"
+    ],
+    "type": "yii2-extension",
+    "license": "MIT",
+    "support": {
+        "issues": "https://github.com/simialbi/yii2-visualcaptcha/issues",
+        "source": "https://github.com/simialbi/yii2-visualcaptcha"
+    },
+    "authors": [
+        {
+            "name": "Simon Karlen",
+            "email": "simi.albi@gmail.com"
+        }
+    ],
+    "prefer-stable": true,
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "https://asset-packagist.org"
+        }
+    ],
+    "require": {
+        "php": ">=7.3",
+        "yiisoft/yii2": "^2.0.15",
+        "simialbi/yii2-simialbi-base": ">=0.13.1 <1.0 | ^1.0.0"
+    },
+    "require-dev": {
+        "yiisoft/yii2-coding-standards": "~2.0",
+        "phpunit/phpunit": "^9.5.21"
+    },
+    "suggest": {
+        "ext-openssl": "Needed in captcha component in utilRandomHex method if yii method fails"
+    },
+    "config": {
+        "process-timeout": 1800,
+        "allow-plugins": {
+            "yiisoft/yii2-composer": true
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "simialbi\\yii2\\visualcaptcha\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "yiiunit\\extensions\\visualcaptcha\\": "tests"
+        }
     }
-  ],
-  "prefer-stable": true,
-  "repositories": [
-    {
-      "type": "composer",
-      "url": "https://asset-packagist.org"
-    }
-  ],
-  "require": {
-    "php": ">=5.6",
-    "yiisoft/yii2": "^2.0.15",
-    "simialbi/yii2-simialbi-base": ">=0.5 <1.0 | ^1.0.0"
-  },
-  "require-dev": {
-    "yiisoft/yii2-coding-standards": "~2.0",
-    "phpunit/phpunit": "< 7"
-  },
-  "suggest": {
-    "ext-openssl": "Needed in captcha component in utilRandomHex method if yii method fails"
-  },
-  "config": {
-    "process-timeout": 1800
-  },
-  "autoload": {
-    "psr-4": {
-      "simialbi\\yii2\\visualcaptcha\\": "src"
-    }
-  },
-  "autoload-dev": {
-    "psr-4": {
-      "yiiunit\\extensions\\visualcaptcha\\": "tests"
-    }
-  }
 }
