@@ -9,6 +9,7 @@ namespace simialbi\yii2\visualcaptcha\components;
 use Yii;
 use yii\base\Component;
 use yii\base\Exception;
+use yii\base\InvalidArgumentException;
 use yii\helpers\ArrayHelper;
 
 /**
@@ -373,7 +374,7 @@ class Captcha extends Component
     {
         try {
             $bytes = Yii::$app->security->generateRandomKey($count);
-        } catch (Exception $e) {
+        } catch (Exception|InvalidArgumentException $e) {
             $bytes = openssl_random_pseudo_bytes($count);
         }
 
@@ -517,7 +518,7 @@ class Captcha extends Component
         }
 
         // Add some noise randomly, so images can't be saved and matched easily by filesize or checksum
-        $img .= $this->utilRandomHex(rand(0, 1500));
+        $img .= $this->utilRandomHex(rand(1, 1500));
 
         return $img;
     }
