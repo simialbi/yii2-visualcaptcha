@@ -9,6 +9,7 @@ namespace simialbi\yii2\visualcaptcha\widgets;
 
 use simialbi\yii2\widgets\InputWidget;
 use Yii;
+use yii\helpers\ArrayHelper;
 use yii\helpers\Html;
 use yii\helpers\Url;
 
@@ -56,44 +57,46 @@ class VisualCaptcha extends InputWidget
 
         $this->registerTranslations();
 
-        $this->clientOptions['language'] = [
-            'accessibilityAlt' => Yii::t(
-                'simialbi/visualcaptcha/input-widget',
-                'Sound icon'
-            ),
-            'accessibilityTitle' => Yii::t(
-                'simialbi/visualcaptcha/input-widget',
-                'Accessibility option: listen to a question and answer it!'
-            ),
-            'accessibilityDescription' => Yii::t(
-                'simialbi/visualcaptcha/input-widget',
-                'Type below the <strong>answer</strong> to what you hear. Numbers or words:'
-            ),
-            'explanation' => Yii::t(
-                'simialbi/visualcaptcha/input-widget',
-                'Click or touch the <strong>ANSWER</strong>'
-            ),
-            'refreshAlt' => Yii::t(
-                'simialbi/visualcaptcha/input-widget',
-                'Refresh/reload icon'
-            ),
-            'refreshTitle' => Yii::t(
-                'simialbi/visualcaptcha/input-widget',
-                'Refresh/reload: get new images and accessibility option!'
-            )
-        ];
-        $this->clientOptions['imgPath'] = rtrim(Yii::getAlias($this->imgPath), '/') . '/';
-        $this->clientOptions['captcha'] = [
-            'url' => Url::to(['/' . $this->moduleId]),
-            'numberOfImages' => $this->numberOfImages,
-            'namespace' => $this->namespace,
-            'namespaceFieldName' => 'namespace',
-            'routes' => [
-                'start' => '/start',
-                'image' => '/image',
-                'audio' => '/audio'
+        $this->clientOptions = ArrayHelper::merge([
+            'language' => [
+                'accessibilityAlt' => Yii::t(
+                    'simialbi/visualcaptcha/input-widget',
+                    'Sound icon'
+                ),
+                'accessibilityTitle' => Yii::t(
+                    'simialbi/visualcaptcha/input-widget',
+                    'Accessibility option: listen to a question and answer it!'
+                ),
+                'accessibilityDescription' => Yii::t(
+                    'simialbi/visualcaptcha/input-widget',
+                    'Type below the <strong>answer</strong> to what you hear. Numbers or words:'
+                ),
+                'explanation' => Yii::t(
+                    'simialbi/visualcaptcha/input-widget',
+                    'Click or touch the <strong>ANSWER</strong>'
+                ),
+                'refreshAlt' => Yii::t(
+                    'simialbi/visualcaptcha/input-widget',
+                    'Refresh/reload icon'
+                ),
+                'refreshTitle' => Yii::t(
+                    'simialbi/visualcaptcha/input-widget',
+                    'Refresh/reload: get new images and accessibility option!'
+                )
+            ],
+            'imgPath' => rtrim(Yii::getAlias($this->imgPath), '/') . '/',
+            'captcha' => [
+                'url' => Url::to(['/' . $this->moduleId]),
+                'numberOfImages' => $this->numberOfImages,
+                'namespace' => $this->namespace,
+                'namespaceFieldName' => 'namespace',
+                'routes' => [
+                    'start' => '/start',
+                    'image' => '/image',
+                    'audio' => '/audio'
+                ]
             ]
-        ];
+        ], $this->clientOptions);
     }
 
     /**
