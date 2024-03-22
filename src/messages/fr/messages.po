@@ -1,3 +1,13 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: 1.0\n"
+"Report-Msgid-Bugs-To: simi.albi@outlook.com\n"
+"PO-Revision-Date: 2024-03-22 14:20+0100\n"
+"Last-Translator: Simon Karlen <simi.albi@outlook.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
 #: widgets/VisualCaptcha.php
 msgctxt "simialbi/visualcaptcha/input-widget"
 msgid "Sound icon"
@@ -29,7 +39,7 @@ msgid "Refresh/reload: get new images and accessibility option!"
 msgstr "Mettre à jour"
 
 #: widgets/VisualCaptcha.php
-msgctxt "simialbi/visualcaptcha/input-widget"
+msgctxt "simialbi/visualcaptcha/names"
 msgid "Airplane"
 msgstr "Avion"
 

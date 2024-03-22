@@ -28,7 +28,7 @@ class Captcha extends Component
      * @var array All the image options. These can be easily overwritten or extended using
      * addImageOptions( <Array> ), or replaceImageOptions( <Array> ).
      */
-    public $imageOptions = [
+    public array $imageOptions = [
         [
             'name' => 'Airplane',
             'path' => '@visualcaptcha/assets/images/airplane.png'
@@ -267,20 +267,20 @@ class Captcha extends Component
     /**
      * @var string
      */
-    public $sessionPrefix = 'visualcaptcha_';
+    public string $sessionPrefix = 'visualcaptcha_';
 
     /**
      * @var string the value of the parameter sent to the server for the namespace, if it's not set up,
      * no namespace will be sent
      */
-    private $_namespace;
+    private string $_namespace;
 
     /**
      * Generate a new valid option
      * @param integer $numberOfOptions Number of options. This parameter is optional. Defaults to 5.
      * @throws \Exception
      */
-    public function generate(int $numberOfOptions = 5)
+    public function generate(int $numberOfOptions = 5): void
     {
         $imageValues = [];
 
@@ -292,11 +292,7 @@ class Captcha extends Component
         $this->validAudioOption = null;
         $this->sessionImageOptions = null;
 
-        $numberOfOptions = intval($numberOfOptions);
-
-        if ($numberOfOptions < 4) {
-            $numberOfOptions = 4;
-        }
+        $numberOfOptions = max(4, $numberOfOptions);
 
         shuffle($this->imageOptions);
 
@@ -394,7 +390,7 @@ class Captcha extends Component
      * Set data to be used by the frontend
      * @param array|null $frontendData
      */
-    public function setFrontendData(?array $frontendData)
+    public function setFrontendData(?array $frontendData): void
     {
         Yii::$app->session->set($this->sessionPrefix . 'frontendData', $frontendData);
     }
@@ -415,7 +411,7 @@ class Captcha extends Component
     {
         $this->_namespace = $namespace;
 
-        if ($pos = (strpos($this->sessionPrefix, '/') !== false)) {
+        if ($pos = (str_contains($this->sessionPrefix, '/'))) {
             $this->sessionPrefix = substr($this->sessionPrefix, $pos + 1);
         }
         if (!empty($namespace)) {
@@ -436,7 +432,7 @@ class Captcha extends Component
      * Set the current validImageOption
      * @param array|null $validImageOption
      */
-    public function setValidImageOption(?array $validImageOption)
+    public function setValidImageOption(?array $validImageOption): void
     {
         Yii::$app->session->set($this->sessionPrefix . 'validImageOption', $validImageOption);
     }
@@ -454,7 +450,7 @@ class Captcha extends Component
      * Get the current validAudioOption
      * @param array|null $validAudioOption
      */
-    public function setValidAudioOption(?array $validAudioOption)
+    public function setValidAudioOption(?array $validAudioOption): void
     {
         Yii::$app->session->set($this->sessionPrefix . 'validAudioOption', $validAudioOption);
     }
@@ -472,7 +468,7 @@ class Captcha extends Component
      * Set generated image options
      * @param array|null $images
      */
-    public function setSessionImageOptions(?array $images)
+    public function setSessionImageOptions(?array $images): void
     {
         Yii::$app->session->set($this->sessionPrefix . 'images', $images);
     }

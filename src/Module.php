@@ -24,7 +24,7 @@ class Module extends \simialbi\yii2\base\Module implements BootstrapInterface
      * {@inheritdoc}
      * @throws \yii\base\InvalidConfigException
      */
-    public function init()
+    public function init(): void
     {
         parent::init();
 
@@ -51,7 +51,7 @@ class Module extends \simialbi\yii2\base\Module implements BootstrapInterface
     /**
      * {@inheritdoc}
      */
-    public function bootstrap($app)
+    public function bootstrap($app): void
     {
         $app->setAliases([
             '@visualcaptcha' => __DIR__

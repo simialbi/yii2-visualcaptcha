@@ -19,12 +19,12 @@ class VisualCaptcha extends InputWidget
      * @var string module ID (case-sensitive). To retrieve grand child modules,
      * use ID path relative to this module (e.g. `admin/content`).
      */
-    public $moduleId = 'visualcaptcha';
+    public string $moduleId = 'visualcaptcha';
 
     /**
      * @var integer number of generated image options for visualCaptcha
      */
-    public $numberOfImages = 6;
+    public int $numberOfImages = 6;
 
     /**
      * @var string path to the following interface icons:
@@ -33,13 +33,13 @@ class VisualCaptcha extends InputWidget
      *   * refresh.png
      *   * refresh@2x.png
      */
-    public $imgPath = '@web/img/';
+    public string $imgPath = '@web/img/';
 
     /**
      * @var string the value of the parameter sent to the server for the namespace, if it's not set up,
      * it will be auto generated
      */
-    public $namespace;
+    public string $namespace;
 
     /**
      * {@inheritdoc}
@@ -104,8 +104,6 @@ class VisualCaptcha extends InputWidget
      */
     public function run(): string
     {
-        parent::run();
-
         $options = $this->options;
         Html::removeCssClass($options, 'form-control');
 

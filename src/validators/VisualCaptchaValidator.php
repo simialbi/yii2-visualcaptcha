@@ -27,12 +27,12 @@ class VisualCaptchaValidator extends Validator
      * @var string module ID (case-sensitive). To retrieve grand child modules,
      * use ID path relative to this module (e.g. `admin/content`).
      */
-    public $moduleId = 'visualcaptcha';
+    public string $moduleId = 'visualcaptcha';
 
     /**
      * {@inheritdoc}
      */
-    public function init()
+    public function init(): void
     {
         parent::init();
         if ($this->message === null) {
@@ -44,7 +44,7 @@ class VisualCaptchaValidator extends Validator
      * {@inheritdoc}
      * @throws \yii\base\NotSupportedException
      */
-    public function validateAttribute($model, $attribute)
+    public function validateAttribute($model, $attribute): void
     {
         $namespace = Yii::$app->request->getBodyParam('namespace', Html::getInputName($model, $attribute));
         $namespaceString = str_replace([Html::getInputName($model, $attribute), '[', ']'], '', $namespace);
@@ -53,6 +53,21 @@ class VisualCaptchaValidator extends Validator
         if (!empty($result)) {
             $this->addError($model, $attribute, $result[0], $result[1]);
         }
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function clientValidateAttribute($model, $attribute, $view): string
+    {
+        return <<<JS
+var that = this;
+\$form.on('ajaxComplete', function (e, jqXHR) {
+    if (jqXHR.responseJSON[that.id]) {
+        jQuery(that.input).data('captcha').refresh();
+    }
+});
+JS;
     }
 
     /**
@@ -75,11 +90,14 @@ class VisualCaptchaValidator extends Validator
             ArrayHelper::getValue($this->captcha->frontendData, 'audioFieldName', '')
         ), '[]');
 
-        if ($imageFieldName && $val = ArrayHelper::getValue($value, $imageFieldName)) {
-            return $this->captcha->validateImage($val) ? null : [$this->message, []];
-        } elseif ($audioFieldName && $val = ArrayHelper::getValue($value, $audioFieldName)) {
-            return $this->captcha->validateAudio($val) ? null : [$this->message, []];
+        $result = $imageFieldName
+            ? $this->captcha->validateImage(ArrayHelper::getValue($value, $imageFieldName, ''))
+            : $this->captcha->validateAudio(ArrayHelper::getValue($value, $audioFieldName, ''));
+
+        if ($result) {
+            return null;
         }
+
         return [$this->message, []];
     }
 
